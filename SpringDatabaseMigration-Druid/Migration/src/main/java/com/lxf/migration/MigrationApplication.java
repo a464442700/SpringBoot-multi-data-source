@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+//@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+//@MapperScan("com.lxf.migration.mapper")
+@SpringBootApplication()
 @MapperScan("com.lxf.migration.mapper")
 public class MigrationApplication {
 
