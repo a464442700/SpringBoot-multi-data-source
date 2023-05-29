@@ -31,7 +31,7 @@ spring:
     password: appsquery
 
 mybatis:
-  mapper-locations: classpath:/com.lxf.migration.mapper/*.xml
+  mapper-locations: classpath:/com/lxf/migration/mapper/*.xml
   type-aliases-package: com.lxf.migration.pojo
 #logging:
 #  level:

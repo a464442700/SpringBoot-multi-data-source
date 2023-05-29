@@ -1,0 +1,27 @@
+### master 数据源配置
+#master.datasource.url=jdbc:oracle:thin:@47.99.191.156:1521:DUPDB
+#master.datasource.username=appsquery
+#master.datasource.password=appsquery
+#master.datasource.driverClassName=oracle.jdbc.OracleDriver
+#
+### cluster 数据源配置
+#cluster.datasource.url=jdbc:oracle:thin:@47.99.191.156:1521:DUPDB
+#cluster.datasource.username=appsquery
+#cluster.datasource.password=appsquery
+#cluster.datasource.driverClassName=oracle.jdbc.OracleDriver
+#
+#
+
+master:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@47.99.191.156:1521:DUPDB
+    username: appsquery
+    password: appsquery
+
+cluster:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@47.99.191.156:1521:DUPDB
+    username: appsquery
+    password: appsquery
