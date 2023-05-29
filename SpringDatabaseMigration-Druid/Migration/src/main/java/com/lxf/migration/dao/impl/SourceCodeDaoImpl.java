@@ -68,7 +68,7 @@ public class SourceCodeDaoImpl implements SourceCodeDao {
 //
 //
 //    }
-
+ @Qualifier("localMapper")
     @Autowired
     private BFSMapper mapper;
 

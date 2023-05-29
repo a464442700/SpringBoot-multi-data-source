@@ -40,16 +40,20 @@ public class LocalDBConfig {
     @Bean(name = "localSqlSessionTemplate")
     @Primary
     public SqlSessionTemplate localSqlSessionTemplate(@Qualifier("localSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+        System.out.println("sqlSessionFactory"+sqlSessionFactory);
+        sqlSessionFactory.getConfiguration().addMapper(BFSMapper.class);
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 
-    //    @Bean(name = "localMapper")
-//    @Primary
-//    public BFSMapper mapper(@Qualifier("localSqlSessionTemplate") SqlSessionTemplate localSqlSessionTemplate) throws Exception {
-//        return  localSqlSessionTemplate.getMapper(BFSMapper.class);
-//    }
-    @Bean
-    public BFSMapper mapper(SqlSessionTemplate localSqlSessionTemplate) {
-        return localSqlSessionTemplate.getMapper(BFSMapper.class);
+    @Bean(name = "localMapper")
+    @Primary
+    public BFSMapper mapper(@Qualifier("localSqlSessionTemplate") SqlSessionTemplate localSqlSessionTemplate) throws Exception {
+     System.out.println(localSqlSessionTemplate);
+        return  localSqlSessionTemplate.getMapper(BFSMapper.class);
     }
+//    @Bean
+//    public BFSMapper mapper(SqlSessionTemplate localSqlSessionTemplate) {
+//        System.out.println("localSqlSessionTemplate"+localSqlSessionTemplate);
+//       return localSqlSessionTemplate.getMapper(BFSMapper.class);
+//    }
 }
