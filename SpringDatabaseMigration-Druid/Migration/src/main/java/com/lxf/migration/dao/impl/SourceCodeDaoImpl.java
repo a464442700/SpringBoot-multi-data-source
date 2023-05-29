@@ -6,6 +6,7 @@ import com.lxf.migration.mapper.BFSMapper;
 import com.lxf.migration.pojo.Node;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.*;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,7 @@ import java.util.Map;
 public class SourceCodeDaoImpl implements SourceCodeDao {
 
 
-//    @Override
+    //    @Override
 //    public void getSourcode(Node node) {
 //        //这段代码不起作用
 //        String resource = "mybatis-config.xml";
@@ -68,7 +69,13 @@ public class SourceCodeDaoImpl implements SourceCodeDao {
 //
 //
 //    }
- @Qualifier("localMapper")
+//    public SourceCodeDaoImpl() {
+//        mapper=localSqlSessionTemplate.getMapper(BFSMapper.class);
+//    }
+//
+//    @Autowired
+//    @Qualifier("localSqlSessionTemplate")
+//    private SqlSessionTemplate localSqlSessionTemplate;
     @Autowired
     private BFSMapper mapper;
 
